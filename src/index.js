@@ -106,7 +106,7 @@ class UglifyJsPlugin {
       }
     }
 
-    return warningMessage;
+    return `｢UglifyJs｣ ${warningMessage} in ${file}`;
   }
 
   apply(compiler) {
