@@ -172,7 +172,7 @@ class UglifyJsPlugin {
                 'uglify-es': versions.uglify,
                 'uglifyjs-webpack-plugin': versions.plugin,
                 'uglifyjs-webpack-plugin-options': this.options,
-                path: compiler.outputPath ? `${compiler.outputPath}/${file}` : file,
+                path: compiler.outputPath ? `${path.relative(process.cwd(), compiler.outputPath)}/${file}` : file,
                 hash: crypto.createHash('md4').update(input).digest('hex'),
               });
             }
